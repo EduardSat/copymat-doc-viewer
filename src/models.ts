@@ -66,8 +66,14 @@ export interface IDocument {
   fileName?: string;
 }
 
+export type EditedDoc = {
+  fileName: string
+  newPath: string
+}
+
 export interface DocRendererProps {
   mainState: IMainState;
+  onSubmit?: (data:EditedDoc) => void;
 }
 
 export interface DocRenderer extends FC<PropsWithChildren<DocRendererProps>> {
